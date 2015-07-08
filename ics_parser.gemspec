@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'ics_parser/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "ics_parser"
-  spec.version       = IcsParser::VERSION
+  spec.version       = '0.0.1'
   spec.authors       = ["Matúš Tomlein"]
   spec.email         = ["matus@tomlein.org"]
   spec.summary       = %q{Reads iCalendar feeds and returns events in an array.}

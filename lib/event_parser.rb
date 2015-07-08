@@ -54,7 +54,7 @@ class EventParser
   end
 
   def parse_summary(event)
-    /SUMMARY:(.*)/.match(event)[1]
+    /SUMMARY:(.*)/.match(event)[1].strip
   end
 
   def parse_starts_at(event)

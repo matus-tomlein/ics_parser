@@ -56,6 +56,19 @@ describe EventParser do
     end
   end
 
+  context 'simple recurring event with exdates' do
+    let(:events) do
+      parser.events.find_all {|event| event.summary == 'simple recurring event with exdates' }
+    end
+    let(:times) { events.map {|event| event.starts_at } }
+
+    it 'found the correct events' do
+      expect(times.size).to eq 2
+      expect(times).to include Time.new(2015, 4, 1, 9, 0)
+      expect(times).to include Time.new(2015, 4, 15, 9, 0)
+    end
+  end
+
   context 'recurring event with exdates' do
     let(:events) do
       parser.events.find_all {|event| event.summary == 'recurring event with exdates' }

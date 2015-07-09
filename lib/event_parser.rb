@@ -116,6 +116,14 @@ class EventParser
   end
 
   def add_days_to_time(time, days)
-    time + (days * 24 * 60 * 60)
+    new_time = time + (days * 24 * 60 * 60)
+    # required to keep the same hour after summer/winter time change
+    if time.hour > new_time.hour
+      new_time + 60 * 60
+    elsif time.hour < new_time.hour
+      new_time - 60 * 60
+    else
+      new_time
+    end
   end
 end

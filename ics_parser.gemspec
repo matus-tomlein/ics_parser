@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "ics_parser"
-  spec.version       = '0.0.3'
+  spec.version       = '0.0.4'
   spec.authors       = ["Matúš Tomlein"]
   spec.email         = ["matus@tomlein.org"]
   spec.summary       = %q{Reads iCalendar feeds and returns events in an array.}

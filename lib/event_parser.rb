@@ -58,11 +58,11 @@ class EventParser
   end
 
   def parse_starts_at(event)
-    Time.parse(/DTSTART[\w\/=;]*:(\d+T\d+)/.match(event)[1])
+    Time.parse(/DTSTART[\w\/=;\s]*:(\d+T\d+)/.match(event)[1])
   end
 
   def parse_ends_at(event)
-    Time.parse(/DTEND[\w\/=;]*:(\d+T\d+)/.match(event)[1])
+    Time.parse(/DTEND[\w\/=;\s]*:(\d+T\d+)/.match(event)[1])
   end
 
   def recurring_event?(event)
